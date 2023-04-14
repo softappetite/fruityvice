@@ -24,12 +24,21 @@ Documentation is at [docs/guide/README.md](docs/guide/README.md).
 
 Installation Guidelines
 -------------------
-
 Step#1: download source
+
 copy the repo in local enviroment
+
 github repo url: git@github.com:softappetite/fruityvice.git
 
-Step#2: database config
+Step#1: initialize project
+
+run this following command
+
+php init
+(it will ask evn. you can select "0" for dev mode and replace all config file by selecting "all")
+
+Step#3: database config
+
 Adjust the components['db'] configuration in common/config/main-local.php accordingly.
 
     'dsn' => 'mysql:host=mysql;dbname=fruityvice',
@@ -38,18 +47,22 @@ Adjust the components['db'] configuration in common/config/main-local.php accord
 
 
 
-Step#3: migrate the database using following command
+Step#4: migrate the database using following command
+
 php yii migrate
 
-Step#4: run the following command to run the application  ( you can change the port according to your need)
+Step#5: run the following command to run the application  ( you can change the port according to your need)
+
 php yii serve --docroot="@frontend/web" --port=8888
 
 
-Step#5: import all Fruits data from fruityvice.com using following command
+Step#6: import all Fruits data from fruityvice.com using following command
+
 php yii fruits/fetch
 
 
 now copy and paste the following two urls into browser to view Fruits List and Fruits Favourites List
+
 #1 http://localhost:8888/index.php?r=fruits/index
 #2 http://localhost:8888/index.php?r=fruits/fav
 
@@ -58,7 +71,6 @@ you can also access this two url from top Nav menu
 you are done!
 
 Thank you!
-
 
 DIRECTORY STRUCTURE
 -------------------
